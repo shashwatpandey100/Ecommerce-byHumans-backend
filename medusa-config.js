@@ -68,7 +68,18 @@ const plugins = [
     options: {
       upload_dir: "uploads",
     },
-  }
+  },
+  // {
+  //   resolve: "@medusajs/admin",
+  //   /** @type {import('@medusajs/admin').PluginOptions} */
+  //   options: {
+  //     autoRebuild: true,
+  //     serve: process.env.NODE_ENV === "development",
+  //     develop: {
+  //       open: process.env.OPEN_BROWSER !== "false",
+  //     },
+  //   },
+  // },
 ];
 
 const modules = {
