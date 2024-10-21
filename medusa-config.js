@@ -69,17 +69,26 @@ const plugins = [
       upload_dir: "uploads",
     },
   },
-  process.env.MODE === "admin" && {
-    resolve: "@medusajs/admin",
-    /** @type {import('@medusajs/admin').PluginOptions} */
+  {
+    resolve: `medusa-file-cloudinary`,
     options: {
-      autoRebuild: true,
-      serve: process.env.NODE_ENV === "development",
-      develop: {
-        open: process.env.OPEN_BROWSER !== "false",
-      },
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+        secure: true,
     },
-  },
+},
+  // process.env.MODE === "admin" && {
+  //   resolve: "@medusajs/admin",
+  //   /** @type {import('@medusajs/admin').PluginOptions} */
+  //   options: {
+  //     autoRebuild: true,
+  //     serve: process.env.NODE_ENV === "development",
+  //     develop: {
+  //       open: process.env.OPEN_BROWSER !== "false",
+  //     },
+  //   },
+  // },
 ];
 
 const modules = {
